@@ -1,10 +1,14 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../api/api";
+import { AuthContext } from "../../contexts/authContext";
 
 export function Dashboard() {
   const [user, setUser] = useState({ name: "", email: "" });
   const navigate = useNavigate();
+
+  const { setLoggedInUser } = useContext(AuthContext);
+
   useEffect(() => {
     async function fetchUser() {
       const response = await api.get("/user/dashboard");
@@ -16,7 +20,7 @@ export function Dashboard() {
 
   function handleLogOut() {
    localStorage.removeItem("loggedInUser");
-    setLoggedInUser(null);
+   setLoggedInUser(null);
     navigate("/");
   }
 

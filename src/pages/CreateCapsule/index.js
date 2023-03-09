@@ -18,18 +18,15 @@ export function CreateCapsule() {
   });
 
   function handleChange(e) {
-    console.log(e.target);
     setCaps({ ...caps, [e.target.name]: e.target.value });
-    console.log(caps);
   }
 
   async function handleSubmit(e) {
     try {
       e.preventDefault();
-      let obj = { data: { ...caps } };
 
-      const response = await api.post("/dashboard", obj);
-      console.log(response);
+      const response = await api.post("/capsule/create-capsule", caps);
+      console.log(response.data);
 
       navigate("/dashboard");
     } catch (err) {

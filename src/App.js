@@ -6,6 +6,7 @@ import { AuthContextComponent } from "./contexts/authContext";
 import { Dashboard } from "./pages/Dashboard";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Footer } from "./components/Footer";
+import 'bootstrap/dist/css/bootstrap.min.css'
 import "./App.css";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";

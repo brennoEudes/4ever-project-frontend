@@ -2,6 +2,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/authContext";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export function Login() {
   const [form, setForm] = useState({
@@ -50,7 +51,7 @@ export function Login() {
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Login</button>
+      <Button type="submit" variant="success">Login</Button>
     </form>
     </>
    

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export function Signup() {
   const navigate = useNavigate();
@@ -76,8 +77,8 @@ export function Signup() {
           value={form.password}
           onChange={handleChange}
         />
-
-        <button type="submit">Create My Time Capsule!</button>
+        <Button type="submit" variant="success">Create My Time Capsule!</Button>
+        
       </form>
     </>
   );

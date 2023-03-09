@@ -1,18 +1,19 @@
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 export function Home() {
   return (
     <>
     <p>4Ever</p>
     <Link to="/login">
-      <button>Login</button>
+      <Button variant="outline-primary">Login</Button>
       </Link>
       <h1>
         Create your time capsule, safe your files that we deliver in the future!
       </h1>
       <h2>For whoever you want! Whenever you want!</h2>
       <Link to="/signup">
-      <button>Create My Time Capsule</button>
+      <Button variant="success">Create My Time Capsule</Button>
       </Link>
     </>
   );

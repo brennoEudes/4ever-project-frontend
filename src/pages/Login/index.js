@@ -26,7 +26,7 @@ export function Login() {
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-      navigate("/profile");
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -43,14 +43,14 @@ export function Login() {
         value={form.email}
         onChange={handleChange}
       />
-      <label>Senha:</label>
+      <label>Password:</label>
       <input
         type="password"
         name="password"
         value={form.password}
         onChange={handleChange}
       />
-      <button type="submit">Entrar!</button>
+      <button type="submit">Login</button>
     </form>
     </>
    

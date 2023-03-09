@@ -4,6 +4,7 @@ import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { AuthContextComponent } from "./contexts/authContext";
 import { Dashboard } from "./pages/Dashboard";
+import { CreateCapsule } from "./pages/CreateCapsule";
 import { ErrorPage } from "./pages/ErrorPage";
 import { Footer } from "./components/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -22,6 +23,10 @@ function App() {
           <Route
             path="/dashboard"
             element={<ProtectedRoute component={Dashboard} />}
+          />
+          <Route
+            path="/create-capsule"
+            element={<ProtectedRoute component={CreateCapsule} />}
           />
 
           <Route path="*" element={<ErrorPage />} />

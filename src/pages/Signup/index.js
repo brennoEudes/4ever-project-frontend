@@ -9,17 +9,12 @@ export function Signup() {
     name: "",
     email: "",
     password: "",
-    confirmPassword: "",
   });
 
   const [img, setImg] = useState("");
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleImage(e) {
-    setImg(e.target.files[0]);
   }
 
   async function handleUpload() {

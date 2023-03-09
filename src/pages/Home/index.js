@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
+import style from "../Home/style.modules.css";
 
 export function Home() {
   return (
     <>
+    <div className="container">
     <p>4Ever</p>
     <Link to="/login">
       <Button variant="outline-primary">Login</Button>
@@ -15,6 +17,8 @@ export function Home() {
       <Link to="/signup">
       <Button variant="success">Create My Time Capsule</Button>
       </Link>
+    </div>
+   
     </>
   );
 }

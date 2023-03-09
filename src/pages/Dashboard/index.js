@@ -36,6 +36,7 @@ export function Dashboard() {
       </Link>
     
       <Button onClick={handleLogOut} variant="outline-danger">Logout</Button>
+      
     </>
   );
 }

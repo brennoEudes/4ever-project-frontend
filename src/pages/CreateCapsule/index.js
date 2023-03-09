@@ -26,7 +26,7 @@ export function CreateCapsule() {
       e.preventDefault();
 
       const response = await api.post("/capsule/create-capsule", caps);
-      console.log(response.data);
+      console.log(response);
 
       navigate("/dashboard");
     } catch (err) {

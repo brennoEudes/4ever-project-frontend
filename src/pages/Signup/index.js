@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { api } from "../../api/api";
 import { useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import Button from "react-bootstrap/Button";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -11,31 +11,15 @@ export function Signup() {
     password: "",
   });
 
-  const [img, setImg] = useState("");
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  async function handleUpload() {
-    try {
-      const uploadData = new FormData();
-      uploadData.append("picture", img);
-
-      const response = await api.post("/upload-image", uploadData);
-
-      return response.data.url;
-    } catch (error) {
-      console.log(error);
-    }
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     try {
-      const imgURL = await handleUpload();
-      await api.post("/user/signup", { ...form, img: imgURL });
+      await api.post("/user/signup", form);
 
       navigate("/login");
     } catch (error) {
@@ -72,8 +56,9 @@ export function Signup() {
           value={form.password}
           onChange={handleChange}
         />
-        <Button type="submit" variant="success">Create My Time Capsule!</Button>
-        
+        <Button type="submit" variant="success">
+          Create My Time Capsule!
+        </Button>
       </form>
     </>
   );

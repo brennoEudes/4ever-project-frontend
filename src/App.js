@@ -7,6 +7,7 @@ import { Profile } from "./pages/Profile";
 import { ErrorPage } from "./pages/ErrorPage";
 
 import { ProtectedRoute } from "./components/ProtectedRoute";
+import { Dashboard } from "./pages/Dashboard";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<ProtectedRoute component={Dashboard} />} />
           <Route
             path="/profile"
             element={<ProtectedRoute component={Profile} />}

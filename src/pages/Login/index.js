@@ -33,6 +33,8 @@ export function Login() {
   }
 
   return (
+    <>
+ <h1>Access your time capsule!</h1>
     <form onSubmit={handleSumit}>
       <label>Email:</label>
       <input
@@ -50,5 +52,7 @@ export function Login() {
       />
       <button type="submit">Entrar!</button>
     </form>
+    </>
+   
   );
 }

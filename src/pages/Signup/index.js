@@ -48,43 +48,37 @@ export function Signup() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="formName">Nome:</label>
-      <input
-        id="formName"
-        name="name"
-        type="text"
-        value={form.name}
-        onChange={handleChange}
-      />
-      <label htmlFor="formImg">Sua foto de perfil:</label>
-      <input type="file" id="formImg" onChange={handleImage} />
+    <>
+      <h1>Create your time capsule!</h1>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="formName">Name:</label>
+        <input
+          id="formName"
+          name="name"
+          type="text"
+          value={form.name}
+          onChange={handleChange}
+        />
 
-      <label htmlFor="formEmail">E-mail:</label>
-      <input
-        id="formEmail"
-        name="email"
-        type="email"
-        value={form.email}
-        onChange={handleChange}
-      />
-      <label htmlFor="formPassword">Senha:</label>
-      <input
-        id="formPassword"
-        name="password"
-        type="password"
-        value={form.password}
-        onChange={handleChange}
-      />
-      <label htmlFor="formConfirmPassword">Confirmação de senha</label>
-      <input
-        id="formConfirmPassword"
-        type="password"
-        name="confirmPassword"
-        value={form.confirmPassword}
-        onChange={handleChange}
-      />
-      <button type="submit">Cadastrar</button>
-    </form>
+        <label htmlFor="formEmail">E-mail:</label>
+        <input
+          id="formEmail"
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+        />
+        <label htmlFor="formPassword">Password:</label>
+        <input
+          id="formPassword"
+          name="password"
+          type="password"
+          value={form.password}
+          onChange={handleChange}
+        />
+
+        <button type="submit">Create My Time Capsule!</button>
+      </form>
+    </>
   );
 }

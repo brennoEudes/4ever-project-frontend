@@ -22,9 +22,9 @@ export function CreateCapsule() {
   }
 
   async function handleSubmit(e) {
-    try {
-      e.preventDefault();
+    e.preventDefault();
 
+    try {
       const response = await api.post("/capsule/create-capsule", caps);
       console.log(response);
 

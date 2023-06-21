@@ -16,17 +16,17 @@ function App() {
   return (
     <>
       <AuthContextComponent>
-        <Routes>
+        <Routes> 
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route
             path="/dashboard"
-            element={<ProtectedRoute component={Dashboard} />}
+            element={<ProtectedRoute component={Dashboard} />} // recebe como prop. o comp. renderizado quando user logado!
           />
           <Route
             path="/create-capsule"
-            element={<ProtectedRoute component={CreateCapsule} />}
+            element={<ProtectedRoute component={CreateCapsule} />} // recebe como prop. o comp. renderizado quando user logado!
           />
 
           <Route path="*" element={<ErrorPage />} />

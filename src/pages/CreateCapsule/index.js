@@ -25,9 +25,10 @@ export function CreateCapsule() {
     e.preventDefault();
 
     try {
-      const response = await api.post("/capsule/create-capsule", caps);
+      const response = await api.post("/capsule/create-capsule", caps); //Alexandre só usou "posts"!!!
       console.log(response);
 
+      // se tudo certo, navegue p/:
       navigate("/dashboard");
     } catch (err) {
       console.log(err);
@@ -40,7 +41,6 @@ export function CreateCapsule() {
       <div className="">
         <div className="">
           <h1 className="">Create a new capsule!</h1>
-
           <form className="" onSubmit={handleSubmit}>
             <label htmlFor="inputCapsuleTitle">Capsule Title:</label>
             <input

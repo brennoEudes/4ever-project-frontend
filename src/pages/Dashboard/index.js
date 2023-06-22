@@ -33,6 +33,7 @@ export function Dashboard() {
 
   return (
     <>
+    <h1>My capsules</h1>
       <Link to="/create-capsule">
         <Button variant="success">Create New Capsule</Button>
       </Link>

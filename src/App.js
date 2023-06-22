@@ -22,11 +22,11 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route
             path="/dashboard"
-            element={<ProtectedRoute component={Dashboard} />} // recebe como prop. o comp. renderizado quando user logado!
+            element={<ProtectedRoute component={Dashboard} />} // Rota protegida! Recebe como prop. o comp. renderizado quando user logado!
           />
           <Route
             path="/create-capsule"
-            element={<ProtectedRoute component={CreateCapsule} />} // recebe como prop. o comp. renderizado quando user logado!
+            element={<ProtectedRoute component={CreateCapsule} />} //  Rota protegida! Recebe como prop. o comp. renderizado quando user logado!
           />
 
           <Route path="*" element={<ErrorPage />} />

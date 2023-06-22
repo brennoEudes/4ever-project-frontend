@@ -11,3 +11,6 @@ root.render(
     </BrowserRouter>
   </React.Suspense>
 );
+
+/* Alteramos o <React.StrictMode> para <React.Suspense>, pois a primeira está apresentando erros 
+de dupla renderização do próprio React, no ambiente de produção */

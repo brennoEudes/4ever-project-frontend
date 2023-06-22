@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
+import { Link } from "react-router-dom"; // p/redirect de páginas
+import Button from 'react-bootstrap/Button'; // p/uso de botões do bootstrap
 import style from "../Home/style.modules.css";
 
 export function Home() {

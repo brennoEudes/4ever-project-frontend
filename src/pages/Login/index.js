@@ -22,10 +22,10 @@ export function Login() {
     e.preventDefault();
 
     try {
-      const response = await api.post("/user/login", form);
-      setLoggedInUser({ ...response.data });
+      const response = await api.post("/user/login", form); 
+      setLoggedInUser({ ...response.data }); // atualiza o contexto
 
-      localStorage.setItem("loggedInUser", JSON.stringify(response.data));
+      localStorage.setItem("loggedInUser", JSON.stringify(response.data)); // atualiza o localStorage
 
       navigate("/dashboard");
     } catch (error) {

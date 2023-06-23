@@ -7,6 +7,7 @@ export function CreateCapsule() {
   const navigate = useNavigate();
 
   const [caps, setCaps] = useState({
+    /* Usar abaixo os msms nomes das chaves definidas no model no backend */
     capsuleTitle: "",
     capsuleDescription: "",
     capsuleReceiverName: "",
@@ -22,11 +23,10 @@ export function CreateCapsule() {
   }
 
   async function handleSubmit(e) {
-    e.preventDefault();
+    e.preventDefault()
 
     try {
-      const response = await api.post("/capsule/create-capsule", caps); //Alexandre só usou "posts"!!!
-      console.log(response);
+      await api.post("/capsule", caps); //Alexandre só usou "/post"!!!
 
       // se tudo certo, navegue p/:
       navigate("/dashboard");
@@ -45,6 +45,8 @@ export function CreateCapsule() {
             <label htmlFor="inputCapsuleTitle">Capsule Title:</label>
             <input
               id="inputCapsuleTitle"
+              type="text"
+              required="true"
               name="capsuleTitle"
               value={caps.capsuleTitle}
               onChange={handleChange}
@@ -52,6 +54,7 @@ export function CreateCapsule() {
             <label htmlFor="inputCapsuleDescription">Description:</label>
             <input
               id="inputCapsuleDescription"
+              type="text"
               name="capsuleDescription"
               value={caps.capsuleDescription}
               onChange={handleChange}
@@ -59,6 +62,8 @@ export function CreateCapsule() {
             <label htmlFor="inputReceiverName">Receiver Name:</label>
             <input
               id="inputReceiverName"
+              type="text"
+              required="true"
               name="capsuleReceiverName"
               value={caps.capsuleReceiverName}
               onChange={handleChange}
@@ -66,6 +71,8 @@ export function CreateCapsule() {
             <label htmlFor="inputReceiverEmail">Receiver Email:</label>
             <input
               id="inputReceiverEmail"
+              type="email"
+              required="true"
               name="capsuleReceiverEmail"
               value={caps.capsuleReceiverEmail}
               onChange={handleChange}
@@ -89,6 +96,8 @@ export function CreateCapsule() {
             <label htmlFor="inputSpecialMessage">Special Message:</label>
             <input
               id="inputSpecialMessage"
+              type="text"
+              required="true"
               name="capsuleSpecialMessage"
               value={caps.capsuleSpecialMessage}
               onChange={handleChange}
@@ -96,6 +105,7 @@ export function CreateCapsule() {
             <label htmlFor="inputAttachedDocument">Attached Document:</label>
             <input
               id="inputAttachedDocument"
+              type="file"
               name="capsuleAttachedDocument"
               value={caps.capsuleAttachedDocument}
               onChange={handleChange}

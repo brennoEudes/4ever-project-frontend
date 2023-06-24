@@ -18,15 +18,34 @@ export function CreateCapsule() {
     capsuleAttachedDocument: "",
   });
 
+  const [img, setImg] = useState("");
+
   function handleChange(e) {
     setCaps({ ...caps, [e.target.name]: e.target.value });
   }
 
+  function handleImage(e) {
+    setImg(e.target.files[0]);
+  }
+
+  // função upload img
+  async function handleUploadImage(e) {
+    const uploadData = new FormData(); // classe do JS
+
+    uploadData.append("picture", img);
+
+    const response = await api.post("/uploadImage", uploadData);
+
+    return response.data.url;
+  }
+
   async function handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
 
     try {
-      await api.post("/capsule", caps); //Alexandre só usou "/post"!!!
+      const imgUrl = await handleUploadImage(); // nessa const. ficará salva a url da img
+
+      await api.post("/capsule", { ...caps, capsuleAttachedDocument: imgUrl }); //Alexandre só usou "/post"!!! (obs: antes de inserir upload img)
 
       // se tudo certo, navegue p/:
       navigate("/dashboard");
@@ -108,7 +127,7 @@ export function CreateCapsule() {
               type="file"
               name="capsuleAttachedDocument"
               value={caps.capsuleAttachedDocument}
-              onChange={handleChange}
+              onChange={handleImage}
             />
             <div className="">
               <Button type="submit" variant="primary" size="lg">

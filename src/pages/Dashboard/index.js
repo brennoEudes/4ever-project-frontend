@@ -9,7 +9,7 @@ import { SearchBar } from "../../components/SearchBar";
 export function Dashboard() {
   // abaixo temos 2 estados que posssuem todas as caps da aplicação
   const [caps, setCaps] = useState([]);
-  const [renderCaps, setRenderCaps] = useState([]);
+  const [renderCaps, setRenderCaps] = useState([]); // caps renderizadas
 
   const { setLoggedInUser } = useContext(AuthContext); // desestrutura p/logout
 
@@ -20,8 +20,8 @@ export function Dashboard() {
       try {
         const response = await api.get("/capsule");
 
-        setCaps(...response.data);
-        setRenderCaps(...response.data);
+        setCaps([...response.data]);
+        setRenderCaps([...response.data]);
       } catch (err) {
         console.log(err);
       }

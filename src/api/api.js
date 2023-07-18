@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiURLs = {
   development: "http://localhost:4000",
-  production: "https://4ever.cyclic.app",
+  production: "https://4ever.cyclic.app", // atenção para não colocar a "/" no final
 };
 
 const api = axios.create({ baseURL: apiURLs[process.env.NODE_ENV] });
